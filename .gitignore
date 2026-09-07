@@ -118,3 +118,59 @@ mmseg/.mim
 
 # Pytorch
 *.pth
+
+# ===== Local datasets / checkpoints =====
+data/
+checkpoint/
+checkpoints/
+
+# ===== Training outputs =====
+work_dirs/
+work_dirs_*/
+outputs/
+results/
+
+# ===== Model weights =====
+*.pth
+*.pt
+*.ckpt
+
+# ===== Local packages =====
+*.whl
+
+# ===== Python / IDE =====
+__pycache__/
+*.pyc
+*.egg-info/
+.vscode/
+.idea/
+.DS_Store
+
+# Dataset
+data/
+
+# Checkpoints
+checkpoint/
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+
+# Training outputs
+work_dirs/
+work_dirs_*/
+outputs/
+results/
+
+# Packages
+*.whl
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store

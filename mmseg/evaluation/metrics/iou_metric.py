@@ -78,6 +78,20 @@ class IoUMetric(BaseMetric):
         for data_sample in data_samples:
             pred_label = data_sample['pred_sem_seg']['data'].squeeze()
             # format_only always for test dataset without ground truth
+            
+            # ======== 🔥 在这里加 mapping ========
+            new_pred = torch.full_like(pred_label, 255)
+
+            # Vaihingen → CUGMine
+            new_pred[pred_label == 0] = 3  # impervious → road
+            new_pred[pred_label == 1] = 2  # building → building
+            new_pred[pred_label == 2] = 0  # low_veg → grassland
+            new_pred[pred_label == 3] = 1  # tree → forest
+            # 4,5 自动保持 255（ignore）
+
+            pred_label = new_pred
+            # ====================================
+            
             if not self.format_only:
                 label = data_sample['gt_sem_seg']['data'].squeeze().to(
                     pred_label)

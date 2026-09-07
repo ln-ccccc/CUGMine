@@ -16,6 +16,10 @@ class ISPRSDataset(BaseSegDataset):
                  'car', 'clutter'),
         palette=[[255, 255, 255], [0, 0, 255], [0, 255, 255], [0, 255, 0],
                  [255, 255, 0], [255, 0, 0]])
+        # classes=('impervious_surface', 'building', 'low_vegetation', 'tree',
+        #          'car'),
+        # palette=[[255, 255, 255], [0, 0, 255], [0, 255, 255], [0, 255, 0],
+        #          [255, 255, 0]])
 
     def __init__(self,
                  img_suffix='.png',
